@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parrott Plaza | 42 W Montgomery Cross Road | For Lease | PIER Commercial</title>
+  <meta name="description" content="For Lease: Parrott Plaza at 42 West Montgomery Cross Road, Savannah, GA. Office, retail, and flex/storage suites from 1,100–1,900 SF. $1,000–$1,900/mo. PIER Commercial Real Estate.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* =============================================
+       PIER BRAND TOKENS
+    ============================================= */
+    :root {
+      --orange: #CB521E;
+      --orange-dark: #a8431a;
+      --navy: #0f1923;
+      --navy-mid: #1a2d42;
+      --white: #ffffff;
+      --off-white: #f8f7f5;
+      --light-gray: #f2f2f0;
+      --mid-gray: #e5e5e3;
+      --text-dark: #1a1a2e;
+      --text-mid: #4a4a5a;
+      --text-light: #7a7a8a;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font); color: var(--text-dark); background: var(--white); -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* =============================================
+       PIER LOGO COMPONENT
+    ============================================= */
+    .pier-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      align-items: flex-start;
+      gap: 4px;
+    }
+    .pier-logo-squares {
+      display: flex;
+      gap: 3px;
+    }
+    .pier-logo-square {
+      width: 17px;
+      height: 17px;
+      background: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 800;
+      color: white;
+      letter-spacing: 0;
+    }
+    .pier-logo-name {
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      line-height: 1;
+    }
+    .pier-logo-tagline {
+      color: var(--orange);
+      font-size: 8px;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      line-height: 1;
+    }
+    /* Dark background variant (contact/footer) */
+    .pier-logo--light .pier-logo-name { color: var(--text-dark); }
+    .pier-logo--light .pier-logo-tagline { color: var(--orange); }
+
+    /* =============================================
+       NAVBAR
+    ============================================= */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--navy);
+      height: 72px;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      gap: 40px;
+    }
+    .nav-logo { flex-shrink: 0; }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      margin-left: auto;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: white; }
+    .nav-badge {
+      background: var(--orange);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 10px 22px;
+      border-radius: 30px;
+      white-space: nowrap;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    .nav-badge:hover { background: var(--orange-dark); }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    #hero {
+      min-height: 100vh;
+      background-image: url('photos/hero.jpg');
+      background-size: cover;
+      background-position: center 40%;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, rgba(15,25,35,0.88) 0%, rgba(15,25,35,0.65) 55%, rgba(15,25,35,0.3) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 110px 60px 60px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(203,82,30,0.15);
+      border: 1px solid rgba(203,82,30,0.5);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 30px;
+      margin-bottom: 24px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 20px;
+      height: 2px;
+      background: var(--orange);
+      display: block;
+    }
+    .hero-title {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.0;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .hero-title span { color: var(--orange); }
+    .hero-subtitle {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: rgba(255,255,255,0.82);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      max-width: 580px;
+    }
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+    .hero-pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 8px 16px;
+      border-radius: 30px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 14px 28px;
+      border-radius: 30px;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.6);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 14px 28px;
+      border-radius: 30px;
+      transition: border-color 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: white; transform: translateY(-1px); }
+
+    /* =============================================
+       STATS BAR
+    ============================================= */
+    #stats {
+      background: var(--orange);
+      padding: 28px 40px;
+    }
+    .stats-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 0 20px;
+      border-right: 1px solid rgba(255,255,255,0.25);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-value {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 900;
+      color: white;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* =============================================
+       SECTION SHARED STYLES
+    ============================================= */
+    section { padding: 80px 40px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .section-eyebrow-line {
+      width: 28px;
+      height: 2px;
+      background: var(--orange);
+      flex-shrink: 0;
+    }
+    .section-eyebrow-text {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .section-lead {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 680px;
+      margin-bottom: 48px;
+    }
+
+    /* =============================================
+       OVERVIEW SECTION
+    ============================================= */
+    #overview { background: var(--white); }
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .spec-table { width: 100%; border-collapse: collapse; }
+    .spec-table tr { border-bottom: 1px solid var(--mid-gray); }
+    .spec-table tr:last-child { border-bottom: none; }
+    .spec-table td {
+      padding: 14px 0;
+      font-size: 0.9rem;
+    }
+    .spec-table td:first-child {
+      color: var(--text-light);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      width: 45%;
+    }
+    .spec-table td:last-child {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+    .spec-table td.highlight { color: var(--orange); font-weight: 700; }
+    .overview-desc {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+    .overview-desc p { margin-bottom: 16px; }
+    .overview-desc p:last-child { margin-bottom: 0; }
+
+    /* =============================================
+       AVAILABLE SUITES
+    ============================================= */
+    #suites { background: var(--off-white); }
+    .suites-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .suite-card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--mid-gray);
+      border-top: 4px solid var(--orange);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .suite-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-2px); }
+    .suite-card-header {
+      padding: 24px 24px 16px;
+      border-bottom: 1px solid var(--mid-gray);
+    }
+    .suite-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .suite-name {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .suite-type {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .suite-card-body { padding: 20px 24px; }
+    .suite-stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--light-gray);
+      font-size: 0.875rem;
+    }
+    .suite-stat:last-of-type { border-bottom: none; }
+    .suite-stat-label { color: var(--text-light); font-weight: 500; }
+    .suite-stat-value { color: var(--text-dark); font-weight: 700; }
+    .suite-stat-value.orange { color: var(--orange); }
+    .suite-notes {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--mid-gray);
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* =============================================
+       HIGHLIGHTS
+    ============================================= */
+    #highlights { background: var(--white); }
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .highlight-card {
+      background: var(--white);
+      border: 1px solid var(--mid-gray);
+      border-top: 4px solid var(--orange);
+      border-radius: 8px;
+      padding: 28px 24px;
+      transition: box-shadow 0.2s;
+    }
+    .highlight-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+    .highlight-number {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .highlight-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .highlight-body {
+      font-size: 0.875rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    /* =============================================
+       GALLERY
+    ============================================= */
+    #gallery { background: var(--off-white); padding: 80px 40px; }
+    .gallery-main {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .gallery-hero-img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .gallery-hero-img:hover { opacity: 0.92; }
+    .gallery-caption {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+
+    /* =============================================
+       LOCATION
+    ============================================= */
+    #location { background: var(--white); }
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .location-map {
+      width: 100%;
+      height: 420px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--mid-gray);
+    }
+    .location-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .location-drivers h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+    .driver-list { list-style: none; }
+    .driver-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--light-gray);
+      font-size: 0.875rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+    .driver-item:last-child { border-bottom: none; }
+    .driver-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+    .driver-item strong { color: var(--text-dark); display: block; font-weight: 600; }
+
+    /* =============================================
+       MARKET DATA
+    ============================================= */
+    #market { background: var(--off-white); }
+    .market-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .market-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 28px 24px;
+      border: 1px solid var(--mid-gray);
+      border-bottom: 4px solid var(--orange);
+    }
+    .market-card-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+    .market-stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--light-gray);
+      font-size: 0.85rem;
+    }
+    .market-stat-row:last-child { border-bottom: none; }
+    .market-stat-label { color: var(--text-mid); }
+    .market-stat-value { font-weight: 700; color: var(--text-dark); }
+
+    /* =============================================
+       CONTACT / NEXT STEPS
+    ============================================= */
+    #contact {
+      background: var(--orange) !important;
+      padding: 80px 40px;
+    }
+    html body section#contact { background: var(--orange) !important; }
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contact-left {}
+    .contact-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 16px;
+    }
+    .contact-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 36px;
+    }
+    .steps-list { list-style: none; }
+    .step-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-content {}
+    .step-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .step-body {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.55;
+    }
+    .contact-card {
+      background: white;
+      border-radius: 12px;
+      padding: 36px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+    }
+    .contact-card-logo { margin-bottom: 20px; }
+    .contact-card-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .contact-card-title-text {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+    }
+    .contact-detail {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 0.875rem;
+      color: var(--text-mid);
+      margin-bottom: 10px;
+    }
+    .contact-detail strong { color: var(--text-dark); font-weight: 600; min-width: 50px; }
+    .contact-btns { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+    .contact-btn-primary {
+      background: var(--orange);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 13px 24px;
+      border-radius: 8px;
+      text-align: center;
+      transition: background 0.2s;
+      display: block;
+    }
+    .contact-btn-primary:hover { background: var(--orange-dark); }
+    .contact-btn-secondary {
+      background: var(--navy);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 13px 24px;
+      border-radius: 8px;
+      text-align: center;
+      transition: background 0.2s;
+      display: block;
+    }
+    .contact-btn-secondary:hover { background: var(--navy-mid); }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background: var(--navy);
+      padding: 40px;
+      text-align: center;
+    }
+    .footer-logo { margin: 0 auto 16px; display: inline-flex; }
+    .footer-disclaimer {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* =============================================
+       FADE-IN ANIMATION
+    ============================================= */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 900px) {
+      nav { padding: 0 20px; gap: 16px; }
+      .nav-links { display: none; }
+      .hero-content { padding: 100px 24px 48px; }
+      .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .stat-item:nth-child(4), .stat-item:nth-child(5) { border-right: none; }
+      section { padding: 60px 24px; }
+      .overview-grid, .location-grid, .contact-inner { grid-template-columns: 1fr; gap: 36px; }
+      .suites-grid, .highlights-grid, .market-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 16px 0; }
+      .hero-title { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============================================
+       NAVBAR
+  ============================================= -->
+  <nav>
+    <div class="nav-logo pier-logo">
+      <div class="pier-logo-squares">
+        <div class="pier-logo-square">P</div>
+        <div class="pier-logo-square">I</div>
+        <div class="pier-logo-square">E</div>
+        <div class="pier-logo-square">R</div>
+      </div>
+      <span class="pier-logo-name">PIER COMMERCIAL</span>
+      <span class="pier-logo-tagline">REAL ESTATE</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#suites">Suites</a></li>
+      <li><a href="#highlights">Highlights</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#market">Market</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-badge">Schedule a Tour</a>
+  </nav>
+
+  <!-- =============================================
+       HERO
+  ============================================= -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">For Lease &middot; Office / Retail / Flex &middot; Savannah, GA</div>
+      <h1 class="hero-title">Parrott<br><span>Plaza</span></h1>
+      <p class="hero-subtitle">Three versatile suites from 1,100 to 1,900 SF at Savannah's most accessible mid-corridor commercial node — Montgomery Cross Road between Abercorn and White Bluff.</p>
+      <div class="hero-pills">
+        <span class="hero-pill">Savannah, Georgia</span>
+        <span class="hero-pill">1,100 – 1,900 SF</span>
+        <span class="hero-pill">$1,000 – $1,900/mo</span>
+        <span class="hero-pill">Office / Retail / Flex</span>
+        <span class="hero-pill">53,650 SF Center</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Request a Tour</a>
+        <a href="#suites" class="btn-secondary">View Available Suites</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       STATS BAR
+  ============================================= -->
+  <div id="stats">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-value">$1,000</div>
+        <div class="stat-label">Starting Rate / Mo</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">3 Suites</div>
+        <div class="stat-label">Available Now</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">53,650 SF</div>
+        <div class="stat-label">Total Center Size</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">22,000+</div>
+        <div class="stat-label">VPD on Corridor</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">53,913</div>
+        <div class="stat-label">Population (3 Mi)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================
+       OVERVIEW
+  ============================================= -->
+  <section id="overview">
+    <div class="section-inner">
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span class="section-eyebrow-text">Property Overview</span>
+      </div>
+      <h2 class="section-title">Flexible space in a proven<br>commercial corridor.</h2>
+      <div class="overview-grid fade-in">
+        <div>
+          <table class="spec-table">
+            <tr><td>Property Name</td><td>Parrott Plaza</td></tr>
+            <tr><td>Address</td><td>42 West Montgomery Cross Road</td></tr>
+            <tr><td>City / State</td><td>Savannah, GA 31406</td></tr>
+            <tr><td>Listing Type</td><td class="highlight">For Lease</td></tr>
+            <tr><td>Property Type</td><td>Office / Retail / Flex</td></tr>
+            <tr><td>Total Building Size</td><td>53,650 SF</td></tr>
+            <tr><td>Space Available</td><td class="highlight">1,100 – 1,900 SF</td></tr>
+            <tr><td>Lease Rate</td><td class="highlight">$1,000 – $1,900 /mo</td></tr>
+            <tr><td>Lease Type</td><td>Plus Utilities</td></tr>
+            <tr><td>Parking</td><td>Ample surface parking</td></tr>
+            <tr><td>Signage</td><td>Road signage available</td></tr>
+            <tr><td>Broker</td><td>Ryan T. Schneider, CCIM</td></tr>
+          </table>
+        </div>
+        <div class="overview-desc">
+          <p>Parrott Plaza is a well-established mixed-use commercial center positioned at the heart of Savannah's southside commercial spine. Located on Montgomery Cross Road just east of Abercorn Street, the center benefits from strong daily traffic, excellent surface parking, and a diverse tenant mix that draws consistent foot traffic throughout the week.</p>
+          <p>Three suites are currently available, each suited to a different occupier profile: a 1,900 SF second-floor office suite ideal for professional services, a 1,100 SF office suite with a private restroom, and a 1,100 SF ground-level flex/storage unit with an overhead drive-in rollup door — a rare and highly functional configuration for distribution, contractor storage, or light industrial use.</p>
+          <p>The center sits in a dense commercial node surrounded by national and regional retailers, a newly opened Roadhouse Grill directly across the street, a recently developed hotel, and the ongoing Oglethorpe Mall mixed-use redevelopment — all driving increased daytime and evening traffic to the corridor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       AVAILABLE SUITES
+  ============================================= -->
+  <section id="suites">
+    <div class="section-inner">
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span class="section-eyebrow-text">Available Spaces</span>
+      </div>
+      <h2 class="section-title">Three suites. Three use cases.<br>All available now.</h2>
+      <p class="section-lead">Each suite is independently leased on a plus-utilities basis. Contact Ryan to discuss which configuration fits your business.</p>
+      <div class="suites-grid fade-in">
+
+        <!-- Suite P -->
+        <div class="suite-card">
+          <div class="suite-card-header">
+            <div class="suite-badge">Suite P</div>
+            <div class="suite-name">1,900 SF</div>
+            <div class="suite-type">Second-Floor Office</div>
+          </div>
+          <div class="suite-card-body">
+            <div class="suite-stat">
+              <span class="suite-stat-label">Monthly Rate</span>
+              <span class="suite-stat-value orange">$1,900 /mo</span>
+            </div>
+            <div class="suite-stat">
+              <span class="suite-stat-label">Lease Type</span>
+              <span class="suite-stat-value">Plus Utilities</span>
+            </div>
+            <div class="suite-stat">
+              <span class="suite-stat-label">Space Type</span>
+              <span class="suite-stat-value">Office</span>
+            </div>
+            <div class="suite-stat">
+              <span class="suite-stat-label">Location</span>
+              <span class="suite-stat-value">2nd Floor, Back Building</span>
+            </div>
+            <div class="suite-notes">Second-floor suite in the rear building. Excellent natural light and privacy — well suited for professional services, medical administration, or executive offices.</div>
+          </div>
+        </div>
+
+        <!-- Suite M -->
+        <div class="suite-card">
+          <div class="suite-card-header">
+            <div class="suite-badge">Suite M</div>
+            <div class="suite-name">1,100 SF</div>
+            <div class="suite-type">Flex / Storage</div>
+          </div>
+          <div class="suite-card-body">
+            <div class="suite-stat">
+              <span class="suite-stat-label">Monthly Rate</span>
+              <span class="suite-stat-value orange">$1,000 /mo</span>
+            </div>
+            <div class="suite-stat">
+              <span class="suite-stat-label">Lease Type</span>
+              <span class="suite-stat-value">Plus Utilities</span>
+            </div>
+            <div class="suite-stat">
+              <span class="suite-stat-label">Space Type</span>
+              <span class="suite-stat-value">Storage / Flex</span>
+            </div>
+            <div class="suite-stat">
+              <span class="suite-stat-label">Access</span>
+              <span class="suite-stat-value">Drive-In Rollup Door</span>
+            </div>
+            <div class="suite-notes">100% storage configuration with an overhead drive-in rollup door and a separate pedestrian access door. Rare ground-level flex space in a retail center — ideal for contractors, distributors, or business overflow storage.</div>
+          </div>
+        </div>
+
+        <!-- Suite H -->
+        <div class="suite-card">
+          <div class="suite-card-header">
+            <div class="suite-badge">Suite H</div>
+            <div class="suite-name">1,100 SF</div>
+            <div class="suite-type">Office / Storage</div>
+          </div>
+          <div class="suite-card-body">
+            <div class="suite-stat">
+              <span class="suite-stat-label">Monthly Rate</span>
+              <span class="suite-stat-value orange">$1,600 /mo</span>
+            </div>
+            <div class="suite-stat">
+              <span class="suite-stat-label">Lease Type</span>
+              <span class="suite-stat-value">Plus Utilities</span>
+            </div>
+            <div class="suite-stat">
+              <span class="suite-stat-label">Space Type</span>
+              <span class="suite-stat-value">Office / Storage</span>
+            </div>
+            <div class="suite-stat">
+              <span class="suite-stat-label">Restroom</span>
+              <span class="suite-stat-value">Private Restroom</span>
+            </div>
+            <div class="suite-notes">Primarily storage with a private office and dedicated restroom. A versatile hybrid configuration for businesses needing a small professional presence alongside significant storage capacity.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       HIGHLIGHTS
+  ============================================= -->
+  <section id="highlights">
+    <div class="section-inner">
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span class="section-eyebrow-text">Why Parrott Plaza</span>
+      </div>
+      <h2 class="section-title">Six reasons tenants choose<br>this location.</h2>
+      <div class="highlights-grid fade-in">
+
+        <div class="highlight-card">
+          <div class="highlight-number">01</div>
+          <div class="highlight-title">Abercorn Corridor Access</div>
+          <div class="highlight-body">Positioned just east of Abercorn Street — Savannah's highest-traffic retail spine with 35,000+ VPD — giving tenants immediate visibility and access to the city's primary commercial artery.</div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-number">02</div>
+          <div class="highlight-title">Ample Parking</div>
+          <div class="highlight-body">Surface parking is abundant and easy to access — a competitive advantage in a market where parking constraints frequently limit tenant options in high-demand corridors.</div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-number">03</div>
+          <div class="highlight-title">Road Signage Available</div>
+          <div class="highlight-body">Tenants have the opportunity to secure road signage on Montgomery Cross Road, providing direct brand visibility to the 22,000+ vehicles that pass the center daily.</div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-number">04</div>
+          <div class="highlight-title">Rare Drive-In Flex Unit</div>
+          <div class="highlight-body">Suite M's overhead rollup door is an uncommon feature in a retail/office center — making it highly attractive for contractors, distributors, and service businesses that need ground-level loading access.</div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-number">05</div>
+          <div class="highlight-title">Neighborhood Momentum</div>
+          <div class="highlight-body">A new Roadhouse Grill directly across the street, a recently opened hotel, additional hotels proposed, and the Oglethorpe Mall mixed-use redevelopment are all driving increased activity and foot traffic to this node.</div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-number">06</div>
+          <div class="highlight-title">Affordable, Flexible Terms</div>
+          <div class="highlight-body">Starting at $1,000/month on a plus-utilities basis, Parrott Plaza offers some of the most competitive lease rates on Savannah's southside — with three distinct suite configurations to match different business needs.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       GALLERY
+  ============================================= -->
+  <section id="gallery">
+    <div class="gallery-main">
+      <div class="section-eyebrow" style="margin-bottom:16px;">
+        <div class="section-eyebrow-line"></div>
+        <span class="section-eyebrow-text">Property Photos</span>
+      </div>
+      <h2 class="section-title">Parrott Plaza — Exterior</h2>
+      <img src="photos/hero.jpg" alt="Parrott Plaza exterior — 42 West Montgomery Cross Road, Savannah, GA" class="gallery-hero-img fade-in">
+      <p class="gallery-caption">42 West Montgomery Cross Road, Savannah, GA 31406 &mdash; Parrott Plaza exterior, front elevation</p>
+    </div>
+  </section>
+
+  <!-- =============================================
+       LOCATION
+  ============================================= -->
+  <section id="location">
+    <div class="section-inner">
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span class="section-eyebrow-text">Location &amp; Map</span>
+      </div>
+      <h2 class="section-title">The southside commercial<br>crossroads of Savannah.</h2>
+      <div class="location-grid fade-in">
+        <div class="location-map">
+          <iframe
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PfZW1XcKJBkGMnSu8mNQxjk&q=42+West+Montgomery+Cross+Road,Savannah,GA+31406&zoom=15"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Parrott Plaza location map">
+          </iframe>
+        </div>
+        <div class="location-drivers">
+          <h3>Demand Generators &amp; Neighbors</h3>
+          <ul class="driver-list">
+            <li class="driver-item">
+              <div class="driver-dot"></div>
+              <div><strong>Abercorn Street Corridor</strong>Savannah's primary retail spine — 35,000+ VPD — directly accessible at the western end of Montgomery Cross Road.</div>
+            </li>
+            <li class="driver-item">
+              <div class="driver-dot"></div>
+              <div><strong>Roadhouse Grill</strong>Newly developed restaurant directly across the street — drives lunch and dinner traffic to the immediate node.</div>
+            </li>
+            <li class="driver-item">
+              <div class="driver-dot"></div>
+              <div><strong>Hotel Development</strong>One new hotel completed in the immediate area; additional hotels proposed, signaling strong hospitality demand and overnight visitor activity.</div>
+            </li>
+            <li class="driver-item">
+              <div class="driver-dot"></div>
+              <div><strong>Oglethorpe Mall Redevelopment</strong>Mixed-use residential and commercial redevelopment nearing completion — adding hundreds of new rooftops and daily shoppers to the trade area.</div>
+            </li>
+            <li class="driver-item">
+              <div class="driver-dot"></div>
+              <div><strong>Candler Hospital</strong>Major medical campus within the 3-mile trade area, anchoring a large daytime workforce population.</div>
+            </li>
+            <li class="driver-item">
+              <div class="driver-dot"></div>
+              <div><strong>White Bluff Road</strong>Secondary commercial corridor to the east, connecting to additional retail, residential, and service-oriented traffic flows.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       MARKET DATA
+  ============================================= -->
+  <section id="market">
+    <div class="section-inner">
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span class="section-eyebrow-text">Market &amp; Demographics</span>
+      </div>
+      <h2 class="section-title">A growing trade area with<br>strong consumer fundamentals.</h2>
+      <div class="market-grid fade-in">
+
+        <div class="market-card">
+          <div class="market-card-title">Population Rings</div>
+          <div class="market-stat-row">
+            <span class="market-stat-label">1-Mile Population</span>
+            <span class="market-stat-value">8,057</span>
+          </div>
+          <div class="market-stat-row">
+            <span class="market-stat-label">3-Mile Population</span>
+            <span class="market-stat-value">53,913</span>
+          </div>
+          <div class="market-stat-row">
+            <span class="market-stat-label">5-Mile Population</span>
+            <span class="market-stat-value">127,003</span>
+          </div>
+          <div class="market-stat-row">
+            <span class="market-stat-label">3-Mile Households</span>
+            <span class="market-stat-value">22,120</span>
+          </div>
+          <div class="market-stat-row">
+            <span class="market-stat-label">Average Age (3 Mi)</span>
+            <span class="market-stat-value">37</span>
+          </div>
+        </div>
+
+        <div class="market-card">
+          <div class="market-card-title">Savannah Economy</div>
+          <div class="market-stat-row">
+            <span class="market-stat-label">MSA Population</span>
+            <span class="market-stat-value">400,000+</span>
+          </div>
+          <div class="market-stat-row">
+            <span class="market-stat-label">Port of Savannah Rank</span>
+            <span class="market-stat-value">#1 US East Coast</span>
+          </div>
+          <div class="market-stat-row">
+            <span class="market-stat-label">Tourism Visitors/Yr</span>
+            <span class="market-stat-value">14M+</span>
+          </div>
+          <div class="market-stat-row">
+            <span class="market-stat-label">Major Employers</span>
+            <span class="market-stat-value">GPA, Gulfstream, Memorial</span>
+          </div>
+          <div class="market-stat-row">
+            <span class="market-stat-label">Market Trajectory</span>
+            <span class="market-stat-value">Expanding</span>
+          </div>
+        </div>
+
+        <div class="market-card">
+          <div class="market-card-title">Corridor Conditions</div>
+          <div class="market-stat-row">
+            <span class="market-stat-label">VPD — Montgomery Xrd</span>
+            <span class="market-stat-value">22,000+</span>
+          </div>
+          <div class="market-stat-row">
+            <span class="market-stat-label">VPD — Abercorn St</span>
+            <span class="market-stat-value">35,000+</span>
+          </div>
+          <div class="market-stat-row">
+            <span class="market-stat-label">Nearby New Development</span>
+            <span class="market-stat-value">Hotel + Restaurant</span>
+          </div>
+          <div class="market-stat-row">
+            <span class="market-stat-label">Oglethorpe Mall Rdev</span>
+            <span class="market-stat-value">Nearing Completion</span>
+          </div>
+          <div class="market-stat-row">
+            <span class="market-stat-label">Lease Type</span>
+            <span class="market-stat-value">Plus Utilities (NNN-style)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       CONTACT / NEXT STEPS
+  ============================================= -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <div class="contact-eyebrow">Next Steps</div>
+        <h2 class="contact-title">Schedule a tour or request more information.</h2>
+        <ul class="steps-list">
+          <li class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <div class="step-title">Contact Ryan</div>
+              <div class="step-body">Call or email directly to discuss suite availability, your business use, and timing. Ryan will answer your questions and help identify the right fit.</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <div class="step-title">Tour the Property</div>
+              <div class="step-body">Walk the available suites, the parking field, access points, and the surrounding corridor to confirm the location works for your operation.</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <div class="step-title">Review Lease Terms</div>
+              <div class="step-body">Confirm suite size, monthly rate, utilities structure, lease term, and any tenant improvement allowance or build-out considerations.</div>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <div class="step-title">Execute and Move In</div>
+              <div class="step-body">PIER Commercial will guide you through the lease execution, keys, and occupancy process to get your business operational quickly.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="contact-right">
+        <div class="contact-card">
+          <div class="contact-card-logo">
+            <div class="pier-logo pier-logo--light">
+              <div class="pier-logo-squares">
+                <div class="pier-logo-square">P</div>
+                <div class="pier-logo-square">I</div>
+                <div class="pier-logo-square">E</div>
+                <div class="pier-logo-square">R</div>
+              </div>
+              <span class="pier-logo-name" style="color:var(--text-dark);">PIER COMMERCIAL</span>
+              <span class="pier-logo-tagline">REAL ESTATE</span>
+            </div>
+          </div>
+          <div class="contact-card-name">Ryan T. Schneider, CCIM</div>
+          <div class="contact-card-title-text">President, PIER Commercial Real Estate</div>
+          <div class="contact-detail"><strong>Phone</strong> 912-239-6298</div>
+          <div class="contact-detail"><strong>Email</strong> ryan@piercommercial.com</div>
+          <div class="contact-detail"><strong>Web</strong> www.piercommercial.com</div>
+          <div class="contact-btns">
+            <a href="mailto:ryan@piercommercial.com?subject=Tour%20Request%3A%20Parrott%20Plaza%20%E2%80%94%2042%20W%20Montgomery%20Cross%20Road&body=Hi%20Ryan%2C%20I%20would%20like%20to%20schedule%20a%20tour%20of%20Parrott%20Plaza." class="contact-btn-primary">Request a Tour via Email</a>
+            <a href="tel:9122396298" class="contact-btn-secondary">Call Ryan Directly</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FOOTER
+  ============================================= -->
+  <footer>
+    <div class="footer-logo pier-logo" style="margin-bottom:16px;">
+      <div class="pier-logo-squares">
+        <div class="pier-logo-square">P</div>
+        <div class="pier-logo-square">I</div>
+        <div class="pier-logo-square">E</div>
+        <div class="pier-logo-square">R</div>
+      </div>
+      <span class="pier-logo-name">PIER COMMERCIAL</span>
+      <span class="pier-logo-tagline">REAL ESTATE</span>
+    </div>
+    <p class="footer-disclaimer">
+      This offering has been prepared by PIER Commercial Real Estate for informational purposes only. All information contained herein has been obtained from sources believed to be reliable; however, PIER Commercial makes no representations or warranties, express or implied, as to the accuracy or completeness of the information. All projections and estimates are provided for general reference only and should not be relied upon as a guarantee of future performance. Prospective tenants are encouraged to independently verify all information and conduct their own due diligence prior to executing any lease agreement. PIER Commercial Real Estate &bull; Savannah, Georgia &bull; ryan@piercommercial.com &bull; 912-239-6298
+    </p>
+  </footer>
+
+  <!-- =============================================
+       FADE-IN SCROLL OBSERVER
+  ============================================= -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Smooth active nav link highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'white' : '';
+      });
+    });
+  </script>
+
+</body>
+</html>
