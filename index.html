@@ -44,44 +44,26 @@
        PIER LOGO COMPONENT
     ============================================= */
     .pier-logo {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-      align-items: flex-start;
-      gap: 4px;
-    }
-    .pier-logo-squares {
-      display: flex;
-      gap: 3px;
-    }
-    .pier-logo-square {
-      width: 17px;
-      height: 17px;
-      background: #CB521E;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      font-size: 9px;
-      font-weight: 800;
-      color: white;
-      letter-spacing: 0;
-    }
-    .pier-logo-name {
-      color: white;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
       line-height: 1;
     }
-    .pier-logo-tagline {
-      color: #CB521E;
-      font-size: 8px;
-      letter-spacing: 0.1em;
-      font-weight: 600;
-      line-height: 1;
+    .pier-logo img {
+      display: block;
+      width: 155px;
+      max-width: 155px;
+      height: auto;
+      border: 0;
+      filter: none !important;
     }
-    .pier-logo--light .pier-logo-name { color: var(--text-dark); }
-    .pier-logo--light .pier-logo-tagline { color: #CB521E; }
+    .pier-logo--light img {
+      width: 175px;
+      max-width: 175px;
+    }
+    .footer-logo img {
+      width: 180px;
+      max-width: 180px;
+    }
 
     /* =============================================
        NAVBAR
@@ -841,14 +823,7 @@
   <!-- NAVBAR -->
   <nav>
     <div class="nav-logo pier-logo">
-      <div class="pier-logo-squares">
-        <div class="pier-logo-square">P</div>
-        <div class="pier-logo-square">I</div>
-        <div class="pier-logo-square">E</div>
-        <div class="pier-logo-square">R</div>
-      </div>
-      <span class="pier-logo-name">PIER COMMERCIAL</span>
-      <span class="pier-logo-tagline">REAL ESTATE</span>
+      <img src="assets/Brokeragetransp.png" alt="PIER Commercial Real Estate">
     </div>
     <ul class="nav-links">
       <li><a href="#overview" >Overview</a></li>
@@ -1320,14 +1295,7 @@
         <div class="inquiry-form-wrap">
           <div class="form-logo">
             <div class="pier-logo pier-logo--light">
-              <div class="pier-logo-squares">
-                <div class="pier-logo-square">P</div>
-                <div class="pier-logo-square">I</div>
-                <div class="pier-logo-square">E</div>
-                <div class="pier-logo-square">R</div>
-              </div>
-              <span class="pier-logo-name" style="color:var(--text-dark);">PIER COMMERCIAL</span>
-              <span class="pier-logo-tagline">REAL ESTATE</span>
+              <img src="assets/Brokeragetransp.png" alt="PIER Commercial Real Estate">
             </div>
           </div>
           <div class="form-title">Property Inquiry Form</div>
@@ -1416,14 +1384,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo pier-logo" style="margin-bottom:16px;">
-      <div class="pier-logo-squares">
-        <div class="pier-logo-square">P</div>
-        <div class="pier-logo-square">I</div>
-        <div class="pier-logo-square">E</div>
-        <div class="pier-logo-square">R</div>
-      </div>
-      <span class="pier-logo-name">PIER COMMERCIAL</span>
-      <span class="pier-logo-tagline">REAL ESTATE</span>
+      <img src="assets/Brokeragetransp.png" alt="PIER Commercial Real Estate">
     </div>
     <p class="footer-disclaimer">
       This offering has been prepared by PIER Commercial Real Estate for informational purposes only. All information contained herein has been obtained from sources believed to be reliable; however, PIER Commercial makes no representations or warranties, express or implied, as to the accuracy or completeness of the information. All projections, estimates, and market data are provided for general reference only and should not be relied upon as a guarantee of future performance. All square footage measurements are approximate (+-) and should be independently verified by the prospective tenant. Prospective tenants are encouraged to independently verify all information and conduct their own due diligence prior to executing any lease agreement. PIER Commercial Real Estate • 912-239-6298 • ryan@piercommercial.com • www.piercommercial.com • Savannah, Georgia
